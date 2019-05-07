@@ -20,7 +20,6 @@ export class ControlPageComponent implements OnInit {
   loadList() {
     this.api.getList().subscribe(list => {
       this.list = list;
-      console.log(list)
     })
   }
 }

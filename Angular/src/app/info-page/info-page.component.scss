@@ -1,0 +1,11 @@
+@import '../../styles.scss';
+.block{
+    width: 80vw;
+    margin-left:4em;
+    margin-top: 3em;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 6px $green
+}
