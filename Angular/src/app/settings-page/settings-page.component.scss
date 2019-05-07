@@ -1,0 +1,13 @@
+@import '../../styles.scss';
+.container {
+  display: flex;
+  justify-content: center;
+  .btn {
+    background: $green;
+    width: 30vw;
+    height: 3em;
+    &:active, &:focus{
+      border:none
+    }
+  }
+}

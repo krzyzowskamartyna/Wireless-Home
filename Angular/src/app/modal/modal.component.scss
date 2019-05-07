@@ -1,0 +1,32 @@
+@import '../../styles.scss';
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.btn {
+  width: 10vw;
+  display: flex;
+  padding: 0.5em;
+  justify-content: center;
+  color: $white;
+  margin: 0.2em;
+
+  &:active, &:focus {
+    border: none
+  }
+}
+.red{
+  background: $red;
+  &:hover{
+    background: darken($red, 10%)
+  }
+
+}
+.green{
+  background: $green;
+  &:hover{
+    background: darken($green, 10%)
+  }
+}

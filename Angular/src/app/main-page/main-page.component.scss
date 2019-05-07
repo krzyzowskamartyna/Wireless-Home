@@ -1,0 +1,26 @@
+@import '../../styles.scss';
+.image{
+  background: url('../../assets/logo.png') center center no-repeat;
+  height: 60vh
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content:space-between;
+  background: $white;
+  color: $navy;
+
+  .container__item {
+    background: $green;
+    height: 10vh;
+    width: 20vw;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-transform:uppercase;
+    color: $white;
+    margin: 0.1em
+  }
+}
