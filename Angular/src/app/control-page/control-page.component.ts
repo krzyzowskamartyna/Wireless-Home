@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { apiService } from '../services/api.service';
+import { Detail } from '../services/detail.model';
 
 @Component({
   selector: 'app-control-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: apiService) { }
 
   ngOnInit() {
+    this.loadList();
   }
 
+  list: Detail[] = [];
+  displayedColumns: string[] = ['position', 'name', 'room', 'turnon', 'turnoff'];
+  loadList() {
+    this.api.getList().subscribe(list => {
+      this.list = list;
+      console.log(list)
+    })
+  }
 }

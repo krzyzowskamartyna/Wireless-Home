@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { apiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     MatIconModule,
-    FormsModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule,
+    HttpClientModule,
+    FormsModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatTableModule,
     AppRoutingModule,
     MatFormFieldModule,
     BrowserAnimationsModule
-  ], exports: [FormsModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule],
-  providers: [],
+  ], exports: [FormsModule, MatTableModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule],
+  providers: [apiService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
