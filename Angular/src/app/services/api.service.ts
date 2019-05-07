@@ -41,10 +41,16 @@ export class apiService {
   }
 
   postDevice(data: Detail): Observable<Detail> {
-    return this.http.post<Detail>(this.apiBase, data, httpOptions)
+    return this.http.post<Detail>(this.apiBase, data)
       .pipe(
         catchError(this.handleError)
       );
+  }
+  deleteDevice(id: number): Observable<Detail> {
+    return this.http.delete<Detail>(this.apiBase + '/' + id)
+  }
+  editDevice(id: number, data: Detail): Observable<Detail> {
+    return this.http.put<Detail>(this.apiBase + '/' + id, data)
   }
 }
 

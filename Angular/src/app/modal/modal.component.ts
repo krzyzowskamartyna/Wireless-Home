@@ -12,13 +12,14 @@ export class ModalComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Detail,
+    @Inject(MAT_DIALOG_DATA)
     public api: apiService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  param: any;
+  data: Detail = new Detail();
 
   ngOnInit() {
   }

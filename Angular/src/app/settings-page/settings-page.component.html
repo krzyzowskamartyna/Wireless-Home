@@ -22,7 +22,7 @@
     <td mat-cell *matCellDef="let element"> {{element.Ip}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="deviceType">
+  <ng-container matColumnDef="DeviceType">
     <th mat-header-cell *matHeaderCellDef> Device Type </th>
     <td mat-cell *matCellDef="let element"> {{element.DeviceType}} </td>
   </ng-container>
@@ -38,7 +38,8 @@
   </ng-container>
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
-    <td mat-cell *matCellDef="let element"> <button mat-button class="btn red">Delete</button> </td>
+    <td mat-cell *matCellDef="let element"> <button (click)="onDelete(element.Id)" mat-button
+        class="btn red">Delete</button> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

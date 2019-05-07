@@ -11,16 +11,17 @@
       <textarea [(ngModel)]="data.Room" [ngModelOptions]="{standalone: true}" matInput placeholder="Room"></textarea>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea [(ngModel)]="data.Type" [ngModelOptions]="{standalone: true}" matInput placeholder="Type"></textarea>
+      <textarea [(ngModel)]="data.DeviceType" [ngModelOptions]="{standalone: true}" matInput
+        placeholder="Device Type "></textarea>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea [(ngModel)]="data. MqttTopics" [ngModelOptions]="{standalone: true}" matInput
+      <textarea [(ngModel)]="data.MqttTopics" [ngModelOptions]="{standalone: true}" matInput
         placeholder="MQTT Title"></textarea>
     </mat-form-field>
   </div>
   <div mat-dialog-actions>
     <button mat-button class="btn red" (click)="onNoClick()">Go back</button>
-    <button mat-button class="btn green" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    <button mat-button class="btn green" [mat-dialog-close]="data" (click)="onSubmit()" cdkFocusInitial>Ok</button>
   </div>
 
 </form>

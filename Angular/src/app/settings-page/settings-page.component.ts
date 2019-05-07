@@ -11,15 +11,16 @@ import { Detail } from '../services/detail.model';
   providers: [Detail]
 })
 export class SettingsPageComponent implements OnInit {
-
+  Id: 0;
   name: string;
   ip: string;
   type: string;
   room: string;
   MqttTopics: string;
+  DeviceType: string;
 
   list: Detail[] = [];
-  displayedColumns: string[] = ['position', 'name', 'room', 'ip', 'deviceType', 'mqttTopics', 'edit', 'delete'];
+  displayedColumns: string[] = ['position', 'name', 'room', 'ip', 'DeviceType', 'mqttTopics', 'edit', 'delete'];
 
   constructor(public dialog: MatDialog, public api: apiService, public data: Detail) { }
 
@@ -30,18 +31,32 @@ export class SettingsPageComponent implements OnInit {
   }
   ngOnInit() {
     this.loadList();
+    this.Id = 0;
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '40vw',
-      data: { Name: this.name, Ip: this.ip, Type: this.type, Room: this.room, MqttTopics: this.MqttTopics }
+      data: { Name: this.name, Ip: this.ip, DeviceType: this.DeviceType, Room: this.room, MqttTopics: this.MqttTopics }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      //this.onSubmit();
+      this.onSubmit(result);
     });
   }
+  onSubmit(result) {
+    this.api.postDevice(result).subscribe(res => {
+      this.data = res;
+
+    })
+  }
+  onDelete(id) {
+    this.api.deleteDevice(id).subscribe(res => {
+      // this.data = res;
+
+    })
+  }
+
+
 
 }
