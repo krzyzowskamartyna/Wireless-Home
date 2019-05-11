@@ -4,23 +4,20 @@ import { Detail } from '../services/detail.model';
 import { apiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  selector: 'app-edit-modal',
+  templateUrl: './edit-modal.component.html',
+  styleUrls: ['../modal/modal.component.scss']
 })
-export class ModalComponent implements OnInit {
-
-  @Input() show: boolean;
+export class EditModalComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<ModalComponent>,
+    public dialogRef: MatDialogRef<EditModalComponent>,
     @Inject(MAT_DIALOG_DATA)
     public api: apiService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-  noShow: boolean = false;
   param: any;
   data: Detail = new Detail();
 

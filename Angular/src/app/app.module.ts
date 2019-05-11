@@ -13,11 +13,12 @@ import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { apiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,14 @@ import { MatTableModule } from '@angular/material/table';
     InfoPageComponent,
     MainPageComponent,
     SettingsPageComponent,
-    ModalComponent
+    ModalComponent,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,
     MatIconModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
     FormsModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatTableModule,
     AppRoutingModule,
     MatFormFieldModule,
@@ -40,6 +43,6 @@ import { MatTableModule } from '@angular/material/table';
   ], exports: [FormsModule, MatTableModule, MatDialogModule, MatFormFieldModule, MatButtonModule, MatInputModule],
   providers: [apiService],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [ModalComponent, EditModalComponent]
 })
 export class AppModule { }
