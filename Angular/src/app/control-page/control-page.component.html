@@ -19,12 +19,12 @@
 
   <ng-container matColumnDef="turnon">
     <th mat-header-cell *matHeaderCellDef> Turn On </th>
-    <td mat-cell *matCellDef="let element"> <button mat-button (click)="turn(on)" class="btn green">ON</button>
+    <td mat-cell *matCellDef="let element"> <button mat-button (click)="turn('on')" class="btn green">ON</button>
     </td>
   </ng-container>
   <ng-container matColumnDef="turnoff">
     <th mat-header-cell *matHeaderCellDef> Turn Off </th>
-    <td mat-cell *matCellDef="let element"> <button mat-button (click)="turn(off)" class="btn red">OFF</button> </td>
+    <td mat-cell *matCellDef="let element"> <button mat-button (click)="turn('off')" class="btn red">OFF</button> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -11,15 +11,15 @@ import { Paho } from 'ng2-mqtt/mqttws31';
 export class ControlPageComponent implements OnInit {
 
   private MQTT_HOST = '192.168.0.50';
-  private MQTT_PORT = 1883;
-  private MQTT_KEEPALIVE_INTERVAL = 45;
-  private MQTT_TOPIC = 'abc';
-  private MQTT_MSG = '';
-  path: "path";
+  private MQTT_PORT = 9001;
+  private MQTT_TOPIC = 'esp/dev0';
+  private MQTT_MSG = 'on';
+
   options = {
     host: this.MQTT_HOST,
     port: this.MQTT_PORT,
-    path: ''
+    username: 'mqtt_user',
+    password: 'password'
 
   }
   client: any;
@@ -29,17 +29,16 @@ export class ControlPageComponent implements OnInit {
   message: any;
   ngOnInit() {
     this.loadList();
-    /*     this.client = new Paho.MQTT.Client(this.MQTT_HOST, Number(this.MQTT_PORT), 'clientId');
-        this.client.onConnectionLost = this.onConnectionLost.bind(this);
-        this.client.connect({ onSuccess: this.onConnect.bind(this) }); */
+    this.client = new Paho.MQTT.Client(this.MQTT_HOST, Number(this.MQTT_PORT), 'clientId');
+    this.client.onConnectionLost = this.onConnectionLost.bind(this);
+    this.client.connect({ onSuccess: this.onConnect.bind(this), userName: 'mqtt_user', password: 'password' });
 
   }
 
   onConnect() {
     console.log("onConnect");
     this.client.subscribe(this.MQTT_TOPIC);
-    console.log('subscribed')
-
+    console.log('subscribed');
   }
   onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
@@ -51,6 +50,7 @@ export class ControlPageComponent implements OnInit {
     this.message = new Paho.MQTT.Message(msg);
     this.message.destinationName = this.MQTT_TOPIC;
     this.client.send(this.message);
+    console.log('send')
   }
 
   list: Detail[] = [];

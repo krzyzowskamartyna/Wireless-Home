@@ -55,7 +55,7 @@ export class SettingsPageComponent implements OnInit {
 
     const dialogRef = this.dialog.open(EditModalComponent, {
       width: '40vw',
-      data: { Id: this.Id, Name: this.name, Ip: this.ip, DeviceType: this.DeviceType, Room: this.room, MqttTopics: this.MqttTopics }
+      // data: { Id: this.Id, Name: this.name, Ip: this.ip, DeviceType: this.DeviceType, Room: this.room, MqttTopics: this.MqttTopics }
     });
 
     dialogRef.afterClosed().subscribe(result => {

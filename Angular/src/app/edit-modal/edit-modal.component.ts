@@ -9,7 +9,7 @@ import { apiService } from '../services/api.service';
   styleUrls: ['../modal/modal.component.scss']
 })
 export class EditModalComponent implements OnInit {
-
+  @Input() item: Detail;
   constructor(
     public dialogRef: MatDialogRef<EditModalComponent>,
     @Inject(MAT_DIALOG_DATA)
@@ -19,6 +19,8 @@ export class EditModalComponent implements OnInit {
     this.dialogRef.close();
   }
   param: any;
+
+
   data: Detail = new Detail();
 
 
