@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WirelessHome.Models;
+using System.Net.NetworkInformation;
+using System.Text;
 
 namespace WirelessHome.Controllers
 {
@@ -40,7 +43,7 @@ namespace WirelessHome.Controllers
 
             return deviceDetail;
         }
-
+        
         // PUT: api/DeviceDetail/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDeviceDetail(int id, DeviceDetail deviceDetail)
@@ -75,10 +78,37 @@ namespace WirelessHome.Controllers
         [HttpPost]
         public async Task<ActionResult<DeviceDetail>> PostDeviceDetail(DeviceDetail deviceDetail)
         {
-            _context.DeviceDetail.Add(deviceDetail);
-            await _context.SaveChangesAsync();
+            if ((deviceDetail.Ip).Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Length == 4)
+            {
+                Ping pingSender = new Ping();
 
-            return CreatedAtAction("GetDeviceDetail", new { id = deviceDetail.Id }, deviceDetail);
+                string data = "testping";
+                byte[] buffer = Encoding.ASCII.GetBytes(data);
+
+                int timeout = 10000;
+
+                PingOptions options = new PingOptions(64, true);
+
+                PingReply reply = pingSender.Send(deviceDetail.Ip, timeout, buffer, options);
+                IPAddress ipAddr;
+                if (IPAddress.TryParse(deviceDetail.Ip, out ipAddr) && reply.Status == IPStatus.Success)
+                {
+
+                    _context.DeviceDetail.Add(deviceDetail);
+                    await _context.SaveChangesAsync();
+
+                    return CreatedAtAction("GetDeviceDetail", new { id = deviceDetail.Id }, deviceDetail);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            else
+            {
+                Console.WriteLine("error");
+                return BadRequest();
+            }       
         }
 
         // DELETE: api/DeviceDetail/5
@@ -101,5 +131,33 @@ namespace WirelessHome.Controllers
         {
             return _context.DeviceDetail.Any(e => e.Id == id);
         }
+
+        public static void ComplexPing(string ip)
+        {
+            Ping pingSender = new Ping();
+
+            string data = "testping";
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+
+            int timeout = 10000;
+
+            PingOptions options = new PingOptions(64, true);
+
+            PingReply reply = pingSender.Send(ip, timeout, buffer, options);
+
+            if (reply.Status == IPStatus.Success)
+            {
+                Console.WriteLine("Address: {0}", reply.Address.ToString());
+                Console.WriteLine("RoundTrip time: {0}", reply.RoundtripTime);
+                Console.WriteLine("Time to live: {0}", reply.Options.Ttl);
+                Console.WriteLine("Don't fragment: {0}", reply.Options.DontFragment);
+                Console.WriteLine("Buffer size: {0}", reply.Buffer.Length);
+            }
+            else
+            {
+                Console.WriteLine(reply.Status);
+            }
+        }
+
     }
 }

@@ -12,3 +12,17 @@ C:\Users\krzyz\Desktop\Web\ASP_API_Angular\WirelessHome\obj\Debug\netcoreapp2.2\
 C:\Users\krzyz\Desktop\Web\ASP_API_Angular\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.pdb
 C:\Users\krzyz\Desktop\Web\ASP_API_Angular\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.dll
 C:\Users\krzyz\Desktop\Web\ASP_API_Angular\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.pdb
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.deps.json
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.runtimeconfig.json
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.runtimeconfig.dev.json
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.dll
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\bin\Debug\netcoreapp2.2\WirelessHome.pdb
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.csprojAssemblyReference.cache
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.csproj.CoreCompileInputs.cache
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.RazorAssemblyInfo.cache
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.RazorAssemblyInfo.cs
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.AssemblyInfoInputs.cache
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.AssemblyInfo.cs
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.RazorTargetAssemblyInfo.cache
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.dll
+C:\Users\krzyz\Desktop\Web\ASP_API_Angular\API\WirelessHome\obj\Debug\netcoreapp2.2\WirelessHome.pdb

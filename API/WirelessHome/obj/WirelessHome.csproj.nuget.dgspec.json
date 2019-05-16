@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\WirelessHome\\WirelessHome.csproj": {}
+    "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\API\\WirelessHome\\WirelessHome.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\WirelessHome\\WirelessHome.csproj": {
+    "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\API\\WirelessHome\\WirelessHome.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\WirelessHome\\WirelessHome.csproj",
+        "projectUniqueName": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\API\\WirelessHome\\WirelessHome.csproj",
         "projectName": "WirelessHome",
-        "projectPath": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\WirelessHome\\WirelessHome.csproj",
+        "projectPath": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\API\\WirelessHome\\WirelessHome.csproj",
         "packagesPath": "C:\\Users\\krzyz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\WirelessHome\\obj\\",
+        "outputPath": "C:\\Users\\krzyz\\Desktop\\Web\\ASP_API_Angular\\API\\WirelessHome\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,11 +41,19 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",

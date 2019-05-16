@@ -12,15 +12,18 @@ namespace WirelessHome.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [DataType(DataType.Text)]
         [Column(TypeName = "nvarchar(100)")]
         public string Name { get; set; }
         [Required]
         [Column(TypeName = "varchar(16)")]
         public string Ip { get; set; }
         [Required]
+        [DataType(DataType.Text)]
         [Column(TypeName = "nvarchar(100)")]
         public string Room { get; set; }
         [Required]
+        [DataType(DataType.Text)]
         [Column(TypeName = "nvarchar(100)")]
         public string DeviceType { get; set; }
         [Required]
