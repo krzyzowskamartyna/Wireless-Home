@@ -46,9 +46,10 @@ export class ControlPageComponent implements OnInit {
     }
   }
 
-  turn(msg: string) {
+  turn(msg: string, element: Detail) {
     this.message = new Paho.MQTT.Message(msg);
-    this.message.destinationName = this.MQTT_TOPIC;
+    this.message.destinationName = element.MqttTopics;
+    console.log(element.MqttTopics);
     this.client.send(this.message);
     console.log('send')
   }

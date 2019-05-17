@@ -19,6 +19,7 @@ import { apiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
   ],
   imports: [
     BrowserModule,
+    MatSnackBarModule,
     MatIconModule,
     HttpClientModule,
     MatProgressSpinnerModule,

@@ -46,8 +46,9 @@ export class SettingsPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.onSubmit(result);
-      window.location.reload();
       this.loading = true;
+
+      setTimeout(function () { window.location.reload() }, 3000)
     });
   }
   openDialogExist(id: number): void {
@@ -59,16 +60,14 @@ export class SettingsPageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
       this.onEdit(id, result);
-      window.location.reload();
       this.loading = true;
+      setTimeout(function () { window.location.reload() }, 3000)
     });
   }
   onSubmit(result: any) {
     this.api.postDevice(result).subscribe(res => {
       this.data = res;
-
     })
   }
   onDelete(id: number) {
@@ -81,10 +80,6 @@ export class SettingsPageComponent implements OnInit {
   onEdit(id: number, result: any) {
     this.api.editDevice(id, result).subscribe(res => {
       this.data = res;
-
     })
   }
-
-
-
 }

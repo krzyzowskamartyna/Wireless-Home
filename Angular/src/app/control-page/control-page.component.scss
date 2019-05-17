@@ -1,16 +1,18 @@
 @import '../../styles.scss';
 table{
-    width: 80vw;
-    margin-left:10%;
-    margin-top: 1em;
-    .btn{
+ @include table;
+}
+ .btn{
         border: none;
-        color: $white
+        color: $white;
+
     }
-    .red{
+.red{
         background: $red
-    }
-    .green{
+}
+.green{
         background: $green
-    }
+}
+.container{
+    @include container;
 }

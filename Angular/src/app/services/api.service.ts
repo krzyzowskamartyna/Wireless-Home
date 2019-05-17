@@ -15,21 +15,26 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class apiService {
-  //formData: Detail;
   constructor(private http: HttpClient) { }
 
   apiBase: string = 'http://localhost:64874/api/DeviceDetail';
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
+      throwError(error.error.message);
     } else {
-      console.error(
+      throwError(
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
+    if (error.status == 400) {
+      return throwError(
+        alert('Invalid data! Please try again.')
+      );
+    }
     return throwError(
-      'Something bad happened; please try again later.');
+      alert('Something bad happened; please try again later.')
+    );
   };
 
   getList(): Observable<Detail[]> {
