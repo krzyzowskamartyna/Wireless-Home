@@ -41,6 +41,7 @@ export class SettingsPageComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '40vw',
+      //  height: '60vh',
       data: { Name: this.name, Ip: this.ip, DeviceType: this.DeviceType, Room: this.room, MqttTopics: this.MqttTopics }
     });
 
@@ -56,6 +57,7 @@ export class SettingsPageComponent implements OnInit {
 
     const dialogRef = this.dialog.open(EditModalComponent, {
       width: '40vw',
+      height: '80vh',
       // data: { Id: this.Id, Name: this.name, Ip: this.ip, DeviceType: this.DeviceType, Room: this.room, MqttTopics: this.MqttTopics }
     });
 

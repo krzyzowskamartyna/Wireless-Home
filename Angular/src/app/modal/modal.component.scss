@@ -4,7 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  min-height: 100vh
+  min-height: 65vh;
+  .form__input{
+    width: 100%
+  }
 }
 .btn {
   width: 10vw;

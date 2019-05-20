@@ -33,7 +33,8 @@ export class apiService {
       );
     }
     return throwError(
-      alert('Something bad happened; please try again later.')
+      console.log('warning')
+      // alert('Something bad happened; please try again later.')
     );
   };
 
